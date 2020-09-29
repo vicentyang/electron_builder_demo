@@ -1,12 +1,12 @@
 {
-  "name": "my-app",
-  "productName": "my-app",
+  "name": "edu",
+  "productName": "edu",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package && rm -rf /Applications/my-app.app && mv out/my-app-darwin-x64/my-app.app /Applications && echo 'done'",
+    "package": "electron-forge package && rm -rf /Applications/edu.app && mv out/edu-darwin-x64/edu.app /Applications && echo 'done'",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
@@ -21,10 +21,12 @@
     "forge": {
       "packagerConfig": {
         "extendInfo": {
-          "CFBundleURLTypes": [{
-            "CFBundleURLName": "edu",
-            "CFBundleURLSchemes": "edu"
-          }]
+          "CFBundleURLTypes": [
+            {
+              "CFBundleURLName": "edu",
+              "CFBundleURLSchemes": "edu"
+            }
+          ]
         }
       },
       "makers": [
@@ -52,7 +54,8 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "looks-same": "^7.2.3"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.53",
